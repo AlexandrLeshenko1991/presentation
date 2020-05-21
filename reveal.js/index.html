@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>react js presentation</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>React JS</h1>
+          <p>
+            Fundamentals
+          </p>
+          <img src="./img/game-react-logo.png" alt="" width="100" />
+        </section>
+        <section>
+          <section>
+            <h2>What is React JS ?</h2>
+          </section>
+          <section>
+            <h4>
+              React is a JavaScript library for building user interfaces.It
+              allows you to assemble a complex UI from small, isolated pieces of
+              code called “components”.
+            </h4>
+          </section>
+          <section>
+            <p>
+              React has been designed from the start for gradual adoption, and
+              you can use as little or as much React as you need.
+            </p>
+          </section>
+          <section>
+            <p>
+              Initially, React was intended to create websites, but later the
+              React Native platform appeared, which was already intended for
+              mobile devices.
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>
+              How is start?
+            </h3>
+            <p>Create new React-app</p>
+            <p></p>
+          </section>
+
+          <section>
+            <p>
+              Create React App is a comfortable environment for learning React,
+              and is the best way to start building a new single-page
+              application in React.
+            </p>
+          </section>
+          <section>
+            <p>
+              It sets up your development environment so that you can use the
+              latest JavaScript features, provides a nice developer experience,
+              and optimizes your app for production.To create a project, run in
+              you terminal:
+            </p>
+            <img src="./img/create-react-app.png" alt="" width="100%" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>
+              Create-react-app project structure and start template
+            </h3>
+          </section>
+          <section>
+            <h5>Project structure</h5>
+            <img
+              src="./img/start-tempalte.png"
+              alt=""
+              width="350px"
+              height="300px"
+            />
+            <div style="text-align: left; font-size: 18px;">
+              <li>
+                The node_modules folder contains all the project dependencies
+                that are listed in package.json and installed when npm starts
+                install.
+              </li>
+              <li>
+                The public folder contains static files and the input
+                file index.html which is our application template
+              </li>
+              <li>
+                Next we see the src folder. This is the folder where we will
+                write our code. And create our components from which we will
+                build our React application. We will dwell on this folder in
+                more detail.
+              </li>
+            </div>
+          </section>
+          <section>
+            <h2>
+              Let's see what the create-react-app command created for us and how
+              it looks now in the browser
+            </h2>
+          </section>
+          <section style="font-size: 16px;">
+            <h3>
+              Now look at the file index.js
+            </h3>
+            <div>
+              <img
+                src="./img/start-index.png"
+                alt=""
+                width="750px"
+                height="300px"
+              />
+            </div>
+            <div>
+              <li>
+                We import the React and ReactDom classes here. Also included is
+                a file with styles.
+              </li>
+              <li>
+                On line 4, the App class is imported, which we will discuss a
+                little later.
+              </li>
+              <br />
+              <li>
+                Next is the code where we call the static render method of the
+                ReactDom class. In which we ask ReactDom to take our App Class,
+                which is a React component! and display it in our template,
+                namely insert it into the element with id 'root'. Which we
+                created in our template.
+              </li>
+            </div>
+          </section>
+          <section>
+            <p>
+              React-component App.js
+            </p>
+            <div style="display: flex; justify-content: space-between;">
+              <img
+                src="./img/app-component.png"
+                alt=""
+                width="350px"
+                height="500px"
+              />
+              <div
+                style="text-align: left; font-size: 25px; margin-left: 20px;"
+              >
+                <li>
+                  our component is a function that returns something very
+                  similar to html markup.
+                </li>
+                <br />
+                <li>
+                  This is JSX! Next, we will take a closer look at what it is
+                </li>
+              </div>
+            </div>
+            <div></div>
+          </section>
+          <section>
+            <p>
+              What our application looks like in a browser now
+            </p>
+            <div style="display: flex; justify-content: space-between;">
+              <img
+                src="./img/app-brower.png"
+                alt=""
+                width="950px"
+                height="500px"
+              />
+            </div>
+            <div></div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            Introducing JSX
+          </section>
+          <section>
+            <img src="./img/app-jsx.png" alt="" width="100%" />
+            <p>
+              It is called JSX, and it is a syntax extension to JavaScript. We
+              recommend using it with React to describe what the UI should look
+              like. JSX may remind you of a template language, but it comes with
+              the full power of JavaScript.
+            </p>
+          </section>
+          <section style="font-size: 20px;">
+            <img src="./img/jsx-exp.png" alt="" />
+            <p>
+              In the example below, we declare a variable called name and then
+              use it inside JSX by wrapping it in curly braces:
+            </p>
+            <p>
+              You can put any valid JavaScript expression inside the curly
+              braces in JSX. For example, 2 + 2, user.firstName, or
+              formatName(user) are all valid JavaScript expressions.
+            </p>
+          </section>
+          <section style="font-size: 26px;">
+            <h4>JSX is an Expression Too</h4>
+            <p>
+              After compilation, JSX expressions become regular JavaScript
+              function calls and evaluate to JavaScript objects.
+              <br />
+              This means that you can use JSX inside of if statements and for
+              loops, assign it to variables, accept it as arguments, and return
+              it from functions:
+            </p>
+            <img src="./img/jsx-fuction.png" alt="" />
+          </section>
+
+          <section style="font-size: 22px;">
+            <h4>Specifying Attributes with JSX</h4>
+            <p>
+              You may use quotes to specify string literals as attributes:
+            </p>
+            <img src="./img/jsx-atr-1.png" alt="" />
+            <p>
+              You may also use curly braces to embed a JavaScript expression in
+              an attribute:
+            </p>
+            <img src="./img/jsx-atr-2.png" alt="" />
+            <p>
+              Don’t put quotes around curly braces when embedding a JavaScript
+              expression in an attribute. You should either use quotes (for
+              string values) or curly braces (for expressions), but not both in
+              the same attribute.
+            </p>
+          </section>
+
+          <section style="font-size: 22px;">
+            <h4>Specifying Children with JSX</h4>
+            <p>
+              If a tag is empty, you may close it immediately with />, like XML:
+            </p>
+            <img src="./img/jsx-child-1.png" alt="" />
+            <p>JSX tags may contain children:</p>
+            <img src="./img/jsx-child-2.png" alt="" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            Components and Props
+          </section>
+
+          <section style="font-size: 26px;">
+            <p>
+              Components let you split the UI into independent, reusable pieces,
+              and think about each piece in isolation.
+            </p>
+          </section>
+          <section style="font-size: 26px;">
+            <h3>
+              Function and Class Components
+            </h3>
+            <p>
+              The simplest way to define a component is to write a JavaScript
+              function:
+            </p>
+            <img src="./img/f-component.png" alt="" width="100%" />
+            <p>
+              This function is a valid React component because it accepts a
+              single “props” (which stands for properties) object argument with
+              data and returns a React element. We call such components
+              “function components” because they are literally JavaScript
+              functions.
+            </p>
+          </section>
+          <section style="font-size: 26px;">
+            <h5>
+              You can also use an ES6 class to define a component:
+            </h5>
+            <img src="./img/class-component.png" alt="" width="100%" />
+            <p>
+              The above two components are equivalent from React’s point of
+              view.
+            </p>
+            <p>
+              Function and Class components both have some additional features
+              that we will discuss in the next sections.
+            </p>
+          </section>
+
+          <section style="font-size: 24px;">
+            <h3>
+              Rendering a Component
+            </h3>
+            <p>
+              Previously, we only encountered React elements that represent DOM
+              tags:
+            </p>
+            <img src="./img/comp-element.png" alt="" width="100%" />
+            <p>
+              However, elements can also represent user-defined components:
+            </p>
+            <img src="./img/comp-w-props.png" alt="" width="100%" />
+          </section>
+          <section style="font-size: 24px;">
+            <p>
+              When React sees an element representing a user-defined component,
+              it passes JSX attributes and children to this component as a
+              single object. We call this object “props”. For example, this code
+              renders “Hello, Sara” on the page:
+            </p>
+            <img src="./img/comp-w-props-render.png" alt="" width="100%" />
+          </section>
+          <section style="font-size: 24px;">
+            <h3>Props are Read-Only</h3>
+            <p>
+              Whether you declare a component as a function or a class, it must
+              never modify its own props. Consider this sum function:
+            </p>
+            <img src="./img/pure-f.png" alt="" width="100%" />
+            <p>
+              Such functions are called “pure” because they do not attempt to
+              change their inputs, and always return the same result for the
+              same inputs.
+            </p>
+            <p>
+              React is pretty flexible but it has a single strict rule:
+              <b>
+                All React components must act like pure functions with respect
+                to their props.
+              </b>
+            </p>
+          </section>
+        </section>
+
+        <section style="font-size: 28px;">
+          <section>
+            <h2>
+              State and Lifecycle
+            </h2>
+          </section>
+
+          <section style="font-size: 26px;">
+            <p>
+              Consider the ticking clock example . In Rendering Elements, we
+              have only learned one way to update the UI. We call
+              ReactDOM.render() to change the rendered output:
+            </p>
+            <img src="./img/ex-clock.png" alt="" width="100%" />
+            <p>
+              In this section, we will learn how to make the Clock component
+              truly reusable and encapsulated. It will set up its own timer and
+              update itself every second.
+            </p>
+          </section>
+          <section style="font-size: 26px;">
+            <p>We can start by encapsulating how the clock looks:</p>
+            <img src="./img/clock-ex-2.png" alt="" width="100%" />
+            <p></p>
+          </section>
+          <section style="font-size: 24px;">
+            <p>
+              However, it misses a crucial requirement: the fact that the Clock
+              sets up a timer and updates the UI every second should be an
+              implementation detail of the Clock.
+            </p>
+            <p>
+              Ideally we want to write this once and have the Clock update
+              itself:
+            </p>
+            <img src="./img/clock-ex-3.png" alt="" width="100%" />
+
+            <p>
+              To implement this, we need to add “state” to the Clock component.
+            </p>
+            <p>
+              State is similar to props, but it is private and fully controlled
+              by the component.
+            </p>
+          </section>
+          <section style="font-size: 24px;">
+            <h3>
+              Converting a Function to a Class
+            </h3>
+            You can convert a function component like Clock to a class in five
+            steps:
+            <ol>
+              <li>
+                Create an ES6 class, with the same name, that extends
+                React.Component.
+              </li>
+              <li>Add a single empty method to it called render().</li>
+              <li>Move the body of the function into the render() method.</li>
+              <li>Replace props with this.props in the render() body.</li>
+              <li>Delete the remaining empty function declaration.</li>
+            </ol>
+
+            <img src="./img/f-to-class.png" alt="" width="100%" />
+          </section>
+
+          <section style="font-size: 24px;">
+            <h3>
+              Adding Local State to a Class
+            </h3>
+            <p style="font-size: 16px;">
+              We will move the date from props to state in three steps:
+            </p>
+            <ol>
+              <li>
+                Replace this.props.date with this.state.date in the render()
+                method:
+              </li>
+              <img src="./img/add-st-1.png" alt="" width="100%" />
+            </ol>
+          </section>
+          <section style="font-size: 22px;">
+            <p>
+              2.Add a class constructor that assigns the initial this.state:
+            </p>
+            <img src="./img/add-st-2.png" alt="" width="100%" />
+            <span>Note how we pass props to the base constructor:</span>
+            <img src="./img/add-st-3.png" alt="" width="100%" />
+            <span
+              >Class components should always call the base constructor with
+              props.</span
+            >
+          </section>
+
+          <section style="font-size: 24px;">
+            <h4>3. Remove the date prop from the <Clock /> element:</h4>
+            <img src="./img/add-st-4.png" alt="" width="100%" />
+          </section>
+          <section style="font-size: 24px;">
+            <p>
+              We will later add the timer code back to the component itself. The
+              result looks like this:
+            </p>
+            <img src="./img/add-st-5.png" alt="" width="100%" />
+          </section>
+
+          <section>
+            <h3>
+              Adding Lifecycle Methods to a Class
+            </h3>
+          </section>
+          <section>
+            <p>
+              In applications with many components, it’s very important to free
+              up resources taken by the components when they are destroyed.
+            </p>
+            <p>
+              We want to set up a timer whenever the Clock is rendered to the
+              DOM for the first time. This is called “mounting” in React.
+            </p>
+            <p>
+              We also want to clear that timer whenever the DOM produced by the
+              Clock is removed. This is called “unmounting” in React.
+            </p>
+          </section>
+          <section>
+            <p>
+              We can declare special methods on the component class to run some
+              code when a component mounts and unmounts:
+            </p>
+            <img src="./img/lcm-1.png" alt="" width="100%" />
+            <p>
+              These methods are called “lifecycle methods”.
+            </p>
+          </section>
+          <section style="font-size: 22px;">
+            <p>
+              The componentDidMount() method runs after the component output has
+              been rendered to the DOM. This is a good place to set up a timer:
+            </p>
+            <img src="./img/lcm-2.png" alt="" width="100%" />
+            <p>
+              Note how we save the timer ID right on this (this.timerID). <br />
+
+              While this.props is set up by React itself and this.state has a
+              special meaning, you are free to add additional fields to the
+              class manually if you need to store something that doesn’t
+              participate in the data flow (like a timer ID). <br />
+
+              We will tear down the timer in the componentWillUnmount()
+              lifecycle method:
+            </p>
+            <img src="./img/lcm-3.png" alt="" width="100%" />
+          </section>
+          <section style="font-size: 20px;">
+            <p>
+              Finally, we will implement a method called tick() that the Clock
+              component will run every second.
+              <br />
+              It will use this.setState() to schedule updates to the component
+              local state:
+            </p>
+            <img src="./img/lcm-4.png" alt="" width="100%" />
+          </section>
+          <section style="font-size: 22px;">
+            <p>
+              Now the clock ticks every second. <br />
+              Let’s quickly recap what’s going on and the order in which the
+              methods are called:
+            </p>
+            <ol>
+              <li>
+                When <Clock /> is passed to ReactDOM.render(), React calls the
+                constructor of the Clock component. Since Clock needs to display
+                the current time, it initializes this.state with an object
+                including the current time. We will later update this state.
+              </li>
+              <li>
+                React then calls the Clock component’s render() method. This is
+                how React learns what should be displayed on the screen. React
+                then updates the DOM to match the Clock’s render output.
+              </li>
+              <li>
+                When the Clock output is inserted in the DOM, React calls the
+                componentDidMount() lifecycle method. Inside it, the Clock
+                component asks the browser to set up a timer to call the
+                component’s tick() method once a second.
+              </li>
+              <li>
+                Every second the browser calls the tick() method. Inside it, the
+                Clock component schedules a UI update by calling setState() with
+                an object containing the current time. Thanks to the setState()
+                call, React knows the state has changed, and calls the render()
+                method again to learn what should be on the screen. This time,
+                this.state.date in the render() method will be different, and so
+                the render output will include the updated time. React updates
+                the DOM accordingly.
+              </li>
+              <li>
+                If the Clock component is ever removed from the DOM, React calls
+                the componentWillUnmount() lifecycle method so the timer is
+                stopped.
+              </li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>END</h1>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/highlight/highlight.js" },
+          { src: "plugin/notes/notes.js", async: true },
+        ],
+      });
+    </script>
+  </body>
+</html>
